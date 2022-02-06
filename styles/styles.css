@@ -53,12 +53,14 @@ div.nav {
 }
 
 section.main__highlight {
+    margin: 60px 0;
     padding: 50px 40px 20px;
 }
 
 h2.main__highlight__heading {
     color: #2c2640;
-    font-size: 3rem;
+    font-size: 2.5rem;
+    font-weight: 800;
 }
 
 .main__highlight__cards {
