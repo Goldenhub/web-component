@@ -13,6 +13,14 @@ p.brandname {
     color: #2c2640;
     font-weight: 800;
 }
+.brand {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+}
+.brand i {
+    font-size: 2rem;
+}
 
 div.nav {
     display: flex;
@@ -23,6 +31,7 @@ div.nav {
 .nav li.list-item {
     display: inline-block;
     margin: 10px 40px 10px 0;
+    text-align: center;
 }
 
 .main__hero {
@@ -130,7 +139,7 @@ footer {
 
 
 
-@media screen and (max-width: 580px) {
+@media screen and (max-width: 860px) {
     h1{
         font-weight: 600;
         font-size: 3rem;
@@ -147,7 +156,14 @@ footer {
 
     div.nav {
         width: 100vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         margin-top: 20px;
+    }
+
+    .nav li.list-item:last-of-type {
+        margin-right: 0;
     }
 
     .main__hero {
