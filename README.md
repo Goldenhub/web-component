@@ -1,2 +1,8 @@
 # web-component
-Implemented web components using custom elements, templates and slots
+### Implemented web components
+- custom elements
+- templates 
+- slots
+- import and export
+- classes
+- scoped styling
