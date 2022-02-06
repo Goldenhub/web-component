@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="title" content="DevSpot">
+    <meta name="description" content="Implemented web components using custom elements, templates and slots">
+    <meta name="keywords"
+        content="web components, custom elements, slot, template, custom element v1, slot v1, module, modules, import, export">
+    <meta name="robots" content="index, nofollow">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="language" content="English">
+    <meta name="author" content="Azubuike Golden">
+
+    <title>DevSpot</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <p class="brandname">DevSpot</p>
+            <div class="nav">
+                <nav-items>
+                    <li class="list-item" slot="list"></li>
+                    <li class="list-item" slot="list"></li>
+                    <li class="list-item" slot="list"></li>
+                </nav-items>
+                <my-button bordercolor="#2c2640" , textcolor="#2c2640"></my-button>
+            </div>
+        </header>
+
+        <main>
+            <section class="main__hero">
+                <div class="main__text">
+                    <h1>Be Spotified with developers</h1>
+                    <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque, in aliquam. Incidunt vitae
+                        tempore, ipsum
+                        quas, autem, fugiat reprehenderit sequi similique.
+                    </p>
+                    <my-button bordercolor="white" textcolor="white"></my-button>
+                </div>
+                <div class="img">
+                    <img src="https://th.bing.com/th/id/R.706ed056fa7cdcd7e509861024603f0c?rik=KxAR9oJQtW6ijA&pid=ImgRaw&r=0&sres=1&sresct=1"
+                        alt="hero image">
+                </div>
+            </section>
+
+            <section class="main__highlight">
+                <h2 class="main__highlight__heading">Perks You Get</h2>
+                <div class="main__highlight__cards">
+                    <card-element icon="bx-link-alt" perk="Group hangout"
+                        text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus quam recusandae, molestias temporibus labore perferendis tenetur molestiae? Vero, cupiditate facere.">
+                    </card-element>
+                    <card-element icon="bx-chalkboard" perk="Peer learning sessions"
+                        text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium asperiores voluptatum sunt porro, dicta quibusdam iusto perferendis aliquid deserunt libero!">
+                    </card-element>
+                    <card-element icon="bxs-group" perk="Mentorship session"
+                        text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia in enim nobis ex veniam eaque aut maxime dolorem dolor recusandae.">
+                    </card-element>
+                </div>
+            </section>
+
+            <section class="main__banner">
+                <h2 class="main__banner__text">
+                    Want to be world class? <br>Meet a mentor
+                </h2>
+                <my-button bordercolor="white" , textcolor="white"></my-button>
+            </section>
+        </main>
+
+        <footer>
+            <section class="footer__heading">
+                <p class="brandname">DevSpot</p>
+                <div class="footer__heading__socials">
+                    <a href="https://twitter.com/chibu_exe" target="_blank"><i class='bx bxl-twitter'></i></a>
+                    <a href="https://linkedin.com/in/goldenazubuike" target="_blank"><i class='bx bxl-linkedin'></i></a>
+                    <a href="https://github.com/goldenhub" target="_blank"><i class='bx bxl-github'></i></a>
+                </div>
+            </section>
+            <hr>
+            <section class="footer__links">
+                <footer-links heading="our brand" , lists="history, reviews">
+                    <li class="list-item" slot="list"></li>
+                    <li class="list-item" slot="list"></li>
+                </footer-links>
+                <footer-links heading="help" , lists="faq, terms of use, privacy policy">
+                    <li class="list-item" slot="list"></li>
+                    <li class="list-item" slot="list"></li>
+                    <li class="list-item" slot="list"></li>
+                </footer-links>
+                <footer-links heading="contact" , lists="support, live chat, team">
+                    <li class="list-item" slot="list"></li>
+                    <li class="list-item" slot="list"></li>
+                    <li class="list-item" slot="list"></li>
+                </footer-links>
+                <footer-links heading="others" , lists="careers, job board">
+                    <li class="list-item" slot="list"></li>
+                    <li class="list-item" slot="list"></li>
+                </footer-links>
+            </section>
+        </footer>
+    </div>
+    <!-- TEMPLATES -->
+    <!-- nav-item template -->
+    <template id="nav">
+        <style>
+            ul {
+                margin: 0;
+                padding: 0;
+            }
+        </style>
+        <ul id="nav-lists">
+            <slot name="list"></slot>
+        </ul>
+    </template>
+
+
+    <!-- button template -->
+    <template id="btn">
+        <style>
+            .btn__container {
+                margin: 10px 20px 10px 0;
+            }
+
+            a {
+                text-decoration: none;
+                padding: 5px 40px;
+            }
+
+            @media screen and (max-width: 580px) {
+                .btn__container {
+                    margin: 10px 0;
+                }
+            }
+        </style>
+        <div class="btn__container">
+            <a class="cta" href="#">Connect</a>
+        </div>
+    </template>
+
+    <!-- card element template -->
+    <template id="card">
+        <style>
+            span.card__icon {
+                display: inline-block;
+                border-radius: 50%;
+                text-align: center;
+                background-color: #95aac5;
+                padding: 50px;
+            }
+
+            .card__icon .bx {
+                color: #ffffff;
+            }
+
+            h3 {
+                font-size: 1.5rem;
+            }
+
+            @media screen and (max-width: 580px) {
+                .card {
+                    text-align: center;
+                    margin-bottom: 60px;
+                }
+            }
+        </style>
+        <div class="card">
+            <span class="card__icon"><i class='bx'></i></span>
+            <h3 class="card__title"></h3>
+            <p class="card__text"></p>
+        </div>
+    </template>
+
+    <!-- footer-links template -->
+    <template id="footer-links">
+        <style>
+            ul {
+                margin: 0;
+                padding: 0;
+            }
+
+            :host {
+                width: 25%;
+            }
+
+            .link__heading {
+                opacity: .8;
+                color: #2c2640;
+                font-weight: bolder;
+            }
+
+            @media screen and (max-width: 580px) {
+                :host {
+                    width: 100%;
+                }
+
+                .link {
+                    text-align: center;
+                    margin-bottom: 30px;
+                }
+            }
+        </style>
+        <div class="link">
+            <h4 class="link__heading"></h4>
+            <ul class="link__list">
+                <slot name="list"></slot>
+            </ul>
+        </div>
+    </template>
+
+    <script type="module" src="./js/app.js"></script>
+</body>
+
+</html>
