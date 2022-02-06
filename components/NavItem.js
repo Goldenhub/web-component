@@ -24,7 +24,7 @@ class NavItem extends HTMLElement {
     const navDiv = document.getElementById('nav-div');
 
     if (!this.hasAttribute("txt")) {
-      this.setAttribute("txt", "Lorem, Ipsum, Dolor");
+      this.setAttribute("txt", "Home, Groups, Job Board");
     }
     this.shadowRoot.firstElementChild.nextElementSibling.addEventListener('slotchange', (e) => {
       Array.from(e.target.assignedElements()).forEach((list, ind) => list.innerHTML = `<a href="#">${this.txt.split(', ')[ind]}</a>`);
